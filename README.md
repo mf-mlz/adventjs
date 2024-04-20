@@ -56,6 +56,45 @@ function findFirstRepeated(gifts) {
 }
 
 ```
+
+
+<h1 align="center" id="title">Challenge #2: 🏭 Let's get the factory up and running</h1>
+
+<ul id="description">In Santa's workshop, the elves have a list of gifts they wish to craft and a limited set of materials.
+Gifts are strings of text and materials are characters. 
+Your task is to write a function that, given a list of gifts and available materials, returns a list of gifts that can be made.
+A gift can be made if we have all the necessary materials to make it.</ul>
+
+[![image.png](https://i.postimg.cc/SRBDfnT2/image.png)](https://postimg.cc/wRkX6jdg)
+
+
+<h2> Solution </h2>
+
+```javascript
+function manufacture(gifts, materials) {
+    
+    /* Formamos el arreglo de arreglos que contiene las letras y los Ordenamos [Al igual que el de los Materiales] */
+    const auxGifts = gifts.map((element) => {
+        return element.split('');
+    });
+
+    const auxMaterials = materials.split('');
+    let auxPalabras = [];
+    
+    /* Recorremos y buscamos que contenga TODAS las Letras (Con Every) */
+    auxGifts.map((gift) => {
+        let todosPresentes = gift.every(elemento => auxMaterials.includes(elemento));
+        if(todosPresentes){
+            auxPalabras.push(gift.join(''));
+        }
+    });
+    
+    return auxPalabras;
+}
+
+
+
+```
   
 <h2>💻 Built with</h2>
 
