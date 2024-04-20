@@ -1,8 +1,7 @@
 function findFirstRepeated2(gifts) {
     const giftIds = gifts;
     const repetidos = [];
-    let key = null;
-
+    
     /* Recorremos el Arreglo para filtrar los números Repetidos y Creamos un arreglo con ellos  */
     for (let index = 0; index < giftIds.length; index++) {
         let result = giftIds.filter((item) => item == giftIds[index]);
@@ -15,11 +14,11 @@ function findFirstRepeated2(gifts) {
 
     }
 
+
     /* Quitamos los duplicados */
     const unicos = [... new Set(repetidos)];
     /* Si obtenemos más de un elemento en el arreglo es porque tenemos elementos duplicados, de lo contrario retornamos -1 */
     if (unicos.length > 0) {
-        let item = null;
         let posicions = [];
 
         /* Recorremos los Elementos duplicados y Obtenemos la última posición de este dentro del arreglo original */
@@ -42,11 +41,6 @@ function findFirstRepeated2(gifts) {
     } else {
         return -1;
     }
-
-
-
-
-
 
 
 }
