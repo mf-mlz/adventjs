@@ -95,6 +95,40 @@ function manufacture(gifts, materials) {
 
 
 ```
+
+<h1 align="center" id="title">Challenge #3: 😏 The Mischievous Elf</h1>
+
+<ul id="description">In Santa's workshop, a mischievous elf has been tinkering in the gift-making chain, adding or removing an unplanned step.
+You have the original sequence of steps in the original manufacturing and the modified modified sequence which may include an extra step or be missing a step.
+Your task is to write a function that identifies and returns the first extra step that has been added or removed in the manufacturing chain. If there is no difference between the sequences, it returns an empty string.</ul>
+
+[![image.png](https://i.postimg.cc/L55ZWf6X/image.png)](https://postimg.cc/q6fRhNKV)
+
+
+<h2> Solution </h2>
+
+```javascript
+function findNaughtyStep(original, modified) {
+
+    const arrayOriginal = original.split("");
+    const arrayModified = modified.split("");
+    const condition = (arrayOriginal.length > arrayModified.length) ? true : false;
+    const arrayMax = condition ? arrayOriginal : arrayModified;
+    const arrayMin = !condition ? arrayOriginal : arrayModified;
+
+    
+    
+    for (let index = 0; index < arrayMax.length; index++) {
+        if(arrayMax[index] != arrayMin[index]){
+            return arrayMax[index];
+        }
+        
+    }
+
+    return '';
+
+}
+```
   
 <h2>💻 Built with</h2>
 
